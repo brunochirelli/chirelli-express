@@ -1,0 +1,41 @@
+{
+  "name": "chirelli-express",
+  "version": "0.0.1",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --allowImportingTsExtensions false --noEmit false --outDir ./dist",
+    "dev": "NODE_ENV=development && bun ./src/index.ts",
+    "start": "NODE_ENV=production && bun ./src/index.ts",
+    "lint": "tsc && eslint ./src --fix",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@types/bun": "latest",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/morgan": "^1.9.9",
+    "@types/supertest": "^6.0.2",
+    "@vitest/coverage-v8": "2.1.4",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "^9.14.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "supertest": "^7.0.0",
+    "typescript-eslint": "^8.14.0",
+    "vitest": "^2.1.4",
+    "vitest-fail-on-console": "^0.7.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
