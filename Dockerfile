@@ -1,15 +1,12 @@
-FROM node:18-alpine as ts-environment
-WORKDIR /usr/app
+FROM oven/bun:latest
 
-COPY package.json ./
-COPY package-lock.json ./
+WORKDIR /app
 
-RUN npm install
+COPY package.json bun.lockb ./
+RUN bun install
 
-COPY . ./
+COPY . .
 
-RUN npm run build
+EXPOSE 3000
 
-EXPOSE 3000/tcp
-
-CMD ["node", "dist/index.js"]
+CMD ["bun", "run", "start"]
