@@ -8,6 +8,7 @@ import config from "./config";
 import fourOhFour from "./middlewares/fourOhFour";
 import errorHandler from "./middlewares/errorHandler";
 import root from "./routes/root.routes";
+import { authenticateUser } from "./middlewares/auth";
 
 const app = express();
 
@@ -24,6 +25,9 @@ app.use(
 
 app.use(helmet());
 app.use(morgan("tiny"));
+
+// Local middlewares
+app.use(authenticateUser);
 
 // Apply routes before error handling
 app.use("/", root);
